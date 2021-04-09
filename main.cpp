@@ -4,36 +4,40 @@
 #include <vector>
 using namespace std;
 
+/*
+    Created by Andrew Faber and Benjamin Bravo
+*/
+
 struct Node {
     string payload;
     Node* next;
 };
 
 Node* newNode(string payload) {
-    /** fill in this code
-     * 
-     *     
-    **/
+    Node* newone = new Node;
+    newone->payload = payload;
+    return newone;
 }
 
-Node* loadGame(int n, vector<string> names) {
+Node* loadGame(int n, vector<string> names) { //returns head
     Node* head = nullptr;
     Node* prev = nullptr;
     string name;
 
-    for (int i = 0; i < n; ++i) {
+    for (int i = 0; i < n; ++i) { // Creating list
         name = names.at(i);
         if (head == nullptr) {
             head = newNode(name); // initialize head specially
-            /** fill in this code **/
+            head->next = head;
+            prev = head;
         } else {
             prev->next = newNode(name);
-            /** fill in this code **/
+            prev = prev->next;
         }
     }
 
-    if (prev != nullptr) {
-        /** fill in this code **/ // make circular
+    if (prev != nullptr) { // make circular
+        prev->next = head;
     }
     return head;
 }
