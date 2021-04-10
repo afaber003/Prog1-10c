@@ -53,6 +53,12 @@ void print(Node* start) { // prints list
     }
 }
 
+/*
+
+            I'VE DONE UNTIL HERE
+
+*/
+
 Node* runGame(Node* start, int k) { // josephus w circular list, k = num skips
     Node* curr = start;
     Node* prev = curr;
