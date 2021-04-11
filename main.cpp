@@ -53,28 +53,31 @@ void print(Node* start) { // prints list
     }
 }
 
-/*
-
-            I'VE DONE UNTIL HERE
-
-*/
 
 Node* runGame(Node* start, int k) { // josephus w circular list, k = num skips
     Node* curr = start;
     Node* prev = curr;
-    while (/** fill in this code **/NULL) { // exit condition, last person standing
+    while (start->next != start) { // exit condition, last person standing
         for (int i = 0; i < k; ++i) { // find kth node
-          /** fill in this code   
-          **/
+          prev = curr;
+          curr = curr->next;
         }
 
-        /** fill in this code **/ // delete kth node
+        prev->next = curr->next;        // remove curr from sequence
         delete curr;
-        /** fill in this code **/
+        curr = prev->next;
     }
 
     return curr; // last person standing
 }
+
+
+/*
+
+            I'VE DONE UNTIL HERE :: You might wanna check it though. I did it pretty quickly...
+
+*/
+
 
 /* Driver program to test above functions */
 int main() {
