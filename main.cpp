@@ -57,7 +57,7 @@ void print(Node* start) { // prints list
 Node* runGame(Node* start, int k) { // josephus w circular list, k = num skips
     Node* curr = start;
     Node* prev = curr;
-    while (start->next != start) { // exit condition, last person standing
+    while (curr->next != curr){ // exit condition, last person standing  
         for (int i = 0; i < k; ++i) { // find kth node
           prev = curr;
           curr = curr->next;
@@ -65,7 +65,7 @@ Node* runGame(Node* start, int k) { // josephus w circular list, k = num skips
 
         prev->next = curr->next;        // remove curr from sequence
         delete curr;
-        curr = prev->next;
+        curr = curr->next;  //FIX-ME  G 
     }
 
     return curr; // last person standing
@@ -84,7 +84,7 @@ int main() {
     int n=1, k=1, max; // n = num names; k = num skips (minus 1)
     string name;
     vector<string> names;
-
+    //cout << "Enter in two numbers" << endl;
     // get inputs
     cin >> n >> k;
     while (cin >> name && name != ".") { names.push_back(name); } // EOF or . ends input
