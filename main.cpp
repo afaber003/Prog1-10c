@@ -70,15 +70,6 @@ Node* runGame(Node* start, int k) { // josephus w circular list, k = num skips
 
     return curr; // last person standing
 }
-
-
-/*
-
-            I'VE DONE UNTIL HERE :: You might wanna check it though. I did it pretty quickly...
-
-*/
-
-
 /* Driver program to test above functions */
 int main() {
     int n=1, k=1, max; // n = num names; k = num skips (minus 1)
